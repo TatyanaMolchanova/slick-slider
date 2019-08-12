@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300%7CPlayfair+Display&display=swap');
+
+@import 'normalize';
+@import 'mixins';
+@import 'slick';
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+	height: 100%;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.8rem;
+	line-height: 1.6;
+	color: #333;
+	min-height: 100%;
+}
+
+.container {
+	max-width: 1024px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.cover {
+	height: 100vh;
+	background-color: #000;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	text-align: center;
+	&__title {
+		font-family: 'Playfair Display', serif;
+		font-size: 8rem;
+		line-height: 1;
+	}
+	&__text {
+		font-size: 3rem;
+		max-width: 80%;
+		margin: 1.8em auto;
+	}
+	&__btn {
+		text-transform: uppercase;
+		background-color: #eecd31;
+		border: 2px solid #eecd31;
+		border-radius: 30px;
+		padding: 15px;
+		text-decoration: none;
+		color: #fff;
+		@include hover {
+			background-color: transparent;
+		}
+	}
+}
+
+.slick {
+	&-arrow {
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+		z-index: 1;
+		border: none;
+		outline: none;
+		background-color: transparent;
+		font-size: 0;
+		width: 50px;
+		height: 50px;
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		border-top: 10px solid #fff;
+		border-right: 10px solid #fff;
+		border-top-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+		@include hover {
+			border-color: #eecd31;
+		}
+	}
+	&-prev {
+		left: 30px;
+		transform: translate(0, -50%) rotate(-135deg);
+	}
+	&-next {
+		right: 30px;
+		transform: translate(0, -50%) rotate(45deg);
+	}
+	&-dots {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 0);
+		li {
+			display: inline-block;
+			margin: 20px 10px;
+		}
+		button {
+			padding: 0;
+			font-size: 0;
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background-color: #8c8c8c;
+			border: 2px solid #8c8c8c;
+			outline: none;
+			line-height: 15px;
+			@include hover {
+				background-color: #eecd31;
+				border-color: #eecd31;
+			}
+			.slick-active & {
+				background-color: #eecd31;
+				border-color: #eecd31;
+			}
+		}
+	}
+
+}
